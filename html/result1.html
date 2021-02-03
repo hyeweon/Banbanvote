@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko"> <!--added-->
+<head>
+    <meta charset="utf-8"> <!--added-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href="main.css" rel="stylesheet" type="text/css">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<title>반반테스트 결과</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--added-->
+<head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top: 60px">
+            <div class="col-11 col-md-7 p-4 text-center" style="padding-bottom: 0 !important">
+                <h5>당신의 정치花는</h5>
+                <h1>모란(목단)</h1>
+                <p style="margin-top: 15px; margin-bottom: 10px"><small>
+                <mark style="background: #f2f2f2">#부귀</mark>
+                <mark style="background: #f2f2f2">#영화</mark>
+                <mark style="background: #f2f2f2">#왕자의품격</mark>
+                </small></p>
+                <img src="image/result1.jpg" style="max-width: 75%; height: auto; margin-bottom: 10px">
+                
+                <h6>당신은 <mark style="background-color:#fdd">모란</mark>을 닮았습니다.</h6>		
+                <p style="margin-top: 15px; text-align: left !important"><small>
+                ‘모란’은 선덕여왕의 지혜를 보여주는 일화로 유명한 꽃입니다.
+                당신 역시 상당히 지혜롭고도 현실적입니다.
+                따라서 문제에 대한 현실적인 방법을 원합니다. 또, 능동적인 면도 있어 스스로의 의견을 내기도 합니다.
+                </small></p>
+                <p style="text-align: left !important"><small>
+                동시에 당신은 완전한 자유보다 규율과 규칙을 더 중요하게 여깁니다.
+                그렇기에 문제에 대한 대책은 보통 어느 정도 규율이나 법으로 강제되어야 한다고 생각합니다.
+                </small></p>
+                <p style="text-align: left !important"><small>
+                당연하게도 애매하거나 확실하지 않은 답은 원하지 않습니다.
+                그러나 지금 당신의 주위에도 정확한 답이 정해지지 않은 문제들이 많습니다.
+                이런 문제에 대해 하나하나 홀로 판단하는 것은 매우 힘든 일입니다.
+                </small></p>
+            </div>
+
+            <div class="col-10 col-md-6 p-3 text-center" style="background: #edf2fc; border-radius: 15px">
+                <p><small>
+                <strong>반반투표</strong>는 당신과 맞는 의견이 실시간으로 나오고 있고, 간단하게 의견을 내고 지지할 수 있는 곳입니다.
+               그런 <strong>반반투표</strong>에서 당신의 의견을 꽃피워보는 것은 어떨까요?
+                </small></p>
+                <div class="d-grid">
+                    <a href="https://banbanvote.page.link/bqu5" class="btn btn-start" style="padding: 12px; background: #FFFFFF !important">
+                        <span style="color: #2E6FEB;">반반투표</span>에서 토론하기</a>
+                </div>
+            </div>
+
+            <div class="col-10 col-md-7">
+                <div class="d-grid mx-auto text-center" style="margin: 10%">
+                    <a href="question.html" style="color: #777777">
+                        <img src="image/Retry.png" style="width: 14px; height: auto; margin-bottom: 3px"> 테스트 다시하기</span></a>
+                </div>
+            </div>
+
+            <hr style="width: 80%; height: 3px; color: gray">
+            <div class="col-11 col-md-7 p-4 text-center">
+                <h6 style="color:#777777">내 주변엔 어떤 꽃이 있을까?</h6>
+                <h4 style="margin-bottom: 25px">테스트 결과 공유하기</h4>
+
+                <div class="btn-toolbar justify-content-between" role="toolbar" style="margin-bottom: 30px">
+                    <a id="kakao-link-btn" href="javascript:sendLink()" style="margin-left:5px; font-size: small">
+                        <img src="image/kakaolink_btn_medium.png" style="width:50px; height:50px; margin-bottom:5px"><br clear="left">카카오톡</a>
+                    <a href="javascript:shareStoryApp()" style="font-size: small">
+                        <img src="image/kakaostory_icon_only.png" style="width:50px; margin-bottom:5px"><br clear="left">카카오스토리</a>
+                    <button class="btn-image" onclick="copy('http://www.banbanvote.com/testpolitic/index.html')" style="font-size: small">
+                        <img src="image/Link.png" style="width:50px; margin-bottom:5px"><br clear="left">링크 복사</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="justify-content-center text-center p-4" style="margin-top: 40px">
+        <p style="font-size: xx-small; padding-top: 10px">copyright(c) 2021 (주)평정커뮤니케이션 All Rights Reserved.
+        <br>
+        반반테스트 is Powered by _ / Designed by _</p>
+    </footer>
+    
+    <script type="text/javascript">
+    Kakao.init('b6956573c6fa3b353101d6f22b43da08');
+    
+    function sendLink() {
+        Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '저의 정치화는 모란 입니다.',
+                description: '당신의 정치참여 유형은 어떤 꽃인가요? 테스트를 통해 알아보세요!',
+                imageUrl:'http://www.banbanvote.com/testpolitic/image/result1.jpg',//대표사진 url
+                link: {
+                    mobileWebUrl: 'https://banbanvote.page.link/bqu5',
+                    webUrl: 'https://banbanvote.page.link/bqu5',
+                },
+            },
+            buttons: [{
+                title: '나의 정치화 알아보기',
+                link: {
+                    mobileWebUrl: 'http://www.banbanvote.com/testpolitic/index.html',//테스트 url
+                    webUrl: 'http://www.banbanvote.com/testpolitic/index.html',//테스트 url
+                },
+            },            ],
+        })
+    }
+    
+    function shareStoryApp() {
+        Kakao.Story.open({
+          url: 'http://www.banbanvote.com/testpolitic/index.html',//테스트 url
+          text: '저의 정치화는 모란 입니다. 당신의 정치참여 유형은 어떤 꽃인가요? 테스트를 통해 알아보세요!',
+        })
+      }
+    
+    function copy(url) {
+        var temp = document.createElement("textarea");
+        document.body.appendChild(temp);
+        temp.value = url;
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+        alert("클립보드에 복사되었습니다");
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</head>
